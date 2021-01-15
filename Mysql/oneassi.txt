@@ -1,0 +1,19 @@
+11/01/2021
+ 1.
+select first_name,last_name,concat(first_name,last_name) as fullname from employees;
+
+select salary as basic_salary from employees;
+
+select salary,salary+10/100 as hra  from employees;
+
+select salary,salary+5/100 as da  from employees;
+
+select salary,salary+7/100 as pf from employees;
+
+select salary+salary+10/100+salary+5/100-salary+7/100 as grosssalary from employees;
+
+2.
+select first_name,salary from employees where hire_date between '1994-01-01' and '2000-01-01';
+
+3.
+ SELECT employees.first_name,departments.department_name,locations.city FROM ((departments INNER JOIN employees ON departments.department_id = employees.department_id) INNER JOIN locations ON departments.location_id = locations.location_id);

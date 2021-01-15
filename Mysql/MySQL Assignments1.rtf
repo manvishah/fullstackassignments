@@ -1,0 +1,187 @@
+{\rtf1\ansi\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset0 Courier New;}{\f1\fnil Courier New;}}
+{\colortbl ;\red255\green255\blue0;}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\highlight1\f0\fs22\lang1033 11/01/2021\highlight0\par
+\par
+\highlight1\fs32 Select Clause with Where clause \par
+\par
+\highlight0\fs22\par
+1) Display details of jobs where the minimum salary is greater than 10000.\par
+\highlight1\par
+-select * from jobs where min_salary > 10000;\par
+\highlight0\par
+\par
+2) Display the first name and join date of the employees who joined between 2002 and 2005.\par
+\par
+\highlight1 -select first_name,hire_date from employees where hire_date between '2002-01-01' and '2005-01-01';\par
+\highlight0\par
+\par
+3) Display first name and join date of the employees who is either IT Programmer or Sales Man.\par
+\par
+\highlight1 -select first_name,hire_date from employees where job_id='IT_PROG' or job_id='ST_MAN';\par
+\highlight0\par
+\par
+4) Display first name, salary, commission pct, and hire date for employees with salary less than 10000.\par
+\par
+\highlight1 -select first_name,salary,commission_pct,hire_date from employees where salary>10000;\par
+\highlight0\par
+\par
+5) Display job Title, the difference between minimum and maximum salaries for jobs with max salary in the range 10000 to 20000.\par
+\par
+\highlight1 -select job_title , max_salary-min_salary from jobs where max_salary between 10000 and 2;\par
+\highlight0\par
+\par
+6) Display employees where the first name or last name starts with S.\par
+\par
+\highlight1 -select first_name,last_name from employees where first_name like's%' or last_name like 's%';\par
+\highlight0\par
+\par
+7) Display details of jobs in the descending order of the title.\par
+\par
+\highlight1 -select * from jobs order by job_title desc;\par
+\highlight0\par
+\par
+8) Display employees who joined in the month of May.\par
+\par
+\highlight1 -select first_name,hire_date from employees where dateformat(hire_date,'%m')='05';\par
+\highlight0\par
+\par
+9) Display details of the employees where commission percentage is null and salary in the range 5000 to 10000 and department is 30.\par
+\par
+\highlight1 -select * from employees where commission_pct is null and salary between 5000 and 10000 and department_id=30;\par
+\highlight0\par
+\par
+\par
+\highlight1\fs32 Join \highlight0\par
+\fs22\par
+\par
+\par
+1). Display job title, employee ID, number of days between ending date and starting date for all jobs in department 30 from job history.\par
+\par
+\highlight1 - SELECT employee_id, job_title, end_date-start_date Days FROM job_history NATURAL JOIN jobs WHERE department_id=90;\par
+\highlight0\par
+\par
+2) Display department name and manager first name.\par
+\par
+\highlight1 -select e.first_name,d.department_name from employees e inner join departments d where e.department_id=d.department_id;\par
+\highlight0\par
+\par
+3) Display department name, manager name, and city.\par
+\par
+
+\pard\qj\highlight1 -select employees.first_name,departments.department_name,locations.city FROM ((departments INNER JOIN employees ON departments.department_id = employees.department_id) INNER JOIN locations ON departments.location_id = locations.location_id);\par
+\highlight0\par
+
+\pard 4) Display country name, city, and department name.\par
+\par
+\highlight1 - SELECT countries.country_name,departments.department_name,locations.city FROM ((locations INNER JOIN countries ON locations.country_id = countries.country_id) INNER JOIN departments ON locations.location_id = departments.location_id);\par
+\highlight0\par
+5) Display employee name and country in which he is working.\par
+\par
+\highlight1 -select first_name,country_name from employees e,departments d,location l,countries c where e.department_id=d.department_id\par
+and d.location_id=l.location_id and l.country_id=c.country_id;\par
+\par
+\par
+\highlight0\par
+\highlight1\fs32 Functions \par
+\par
+\highlight0\fs22\par
+\par
+1. Display employees who joined in the month of May.\par
+\par
+\highlight1 --select first_name,hire_date from employees where dateformat(hire_date,'%m')='05';\par
+\highlight0\par
+\par
+2. Display first name, salary, and round the salary to thousands.\par
+\par
+\highlight1 -select first_name,salary,round(salary,2) from employees;\par
+\highlight0\par
+\par
+\par
+3. Display first name and date of first salary of the employees.\par
+\par
+\highlight1 -select first_name,hire_date,last_day(hire_date) from employees; \par
+\highlight0\par
+4. Display first name and experience of the employees.\par
+\par
+\highlight1 - select first_name ,datediff(sysdate(),hire_date)/365 as experience from employees;\par
+\highlight0\par
+\par
+5. Display the length of first name for employees where last name contain character \'e2\'80\f1\'98b\f0\'e2\'80\'99 after 3rd position.\par
+\par
+\highlight1 -select length(first_name) from employees where INSTR(last_name,'b')>3;\par
+\highlight0\par
+\par
+6. Display first name in upper case and email address in lower case for employees where the first name and email address are same irrespective of the case.\par
+\par
+\highlight1 - select upper(first_name),lower(email) from employees;\par
+\highlight0\par
+7. Display employees who joined in the current year.\par
+\par
+\highlight1 - select first_name from employees where YEAR(hire_date)=YEAR(curdate());\par
+\highlight0\par
+\par
+8. Display the number of days between system date and 1st January 1995.\par
+\par
+\highlight1 -select datediff(sysdate(),'1995-01-01');\par
+\highlight0\par
+9. Display how many employees joined in each month of the current year.\par
+\par
+\highlight1 -SELECT TO_CHAR(HIRE_DATE,'MM'), COUNT (*) FROM EMPLOYEES WHERE TO_CHAR(HIRE_DATE,'YYYY')= TO_CHAR(SYSDATE,'YYYY') GROUP BY TO_CHAR(HIRE_DATE,'MM') \par
+\highlight0\par
+\par
+\highlight1\fs32 MySQL Aggregate function \fs22\par
+\highlight0\par
+\par
+\par
+1. Display employee ID and the date on which he ended his previous job.\par
+\par
+\highlight1 -SELECT EMPLOYEE_ID, MAX(END_DATE) FROM JOB_HISTORY GROUP BY EMPLOYEE_ID;\par
+\highlight0\par
+2. Display number of employees joined after 15th of the month.\par
+\par
+\highlight1 -select first_name,hire_date from employees where dateformat(hire_date,'%d')>'15';\par
+\highlight0\par
+\highlight1 select with Group by \par
+\highlight0\par
+3. Display the country ID and number of cities we have in the country.\par
+\par
+\highlight1 -SELECT COUNTRY_ID,  COUNT(*)  FROM LOCATIONS GROUP BY COUNTRY_ID\par
+\highlight0\par
+\par
+4. Display average salary of employees in each department who have commission percentage.\par
+\par
+\highlight1 -SELECT DEPARTMENT_ID, AVG(SALARY) FROM EMPLOYEES \par
+WHERE COMMISSION_PCT IS NOT NULL GROUP BY DEPARTMENT_ID\par
+\highlight0\par
+\par
+\par
+5. Display job ID, number of employees, sum of salary, and difference between highest salary and lowest salary of the employees of the job.\par
+\par
+\highlight1 -SELECT JOB_ID, COUNT(*), SUM(SALARY), MAX(SALARY)-MIN(SALARY) SALARY FROM EMPLOYEES GROUP BY JOB_ID;\par
+\highlight0\par
+\par
+6. Display job ID for jobs with average salary more than 10000.\par
+\par
+\highlight1 -SELECT JOB_ID, AVG(SALARY) FROM EMPLOYEES GROUP BY JOB_ID HAVING AVG(SALARY)>10000\par
+\highlight0\par
+7. Display years in which more than 10 employees joined.\par
+\par
+\highlight1 -SELECT DATE_FORMAT(HIRE_DATE,'%Y') FROM employees GROUP BY DATE_FORMAT(HIRE_DATE,'%Y') HAVING COUNT(EMPLOYEE_ID) > 10;\par
+\highlight0\par
+8. Display departments in which more than five employees have commission percentage.\par
+\par
+\highlight1 -SELECT DEPARTMENT_ID FROM EMPLOYEES WHERE COMMISSION_PCT IS NOT NULL GROUP BY DEPARTMENT_ID HAVING COUNT(COMMISSION_PCT)>5\par
+\highlight0\par
+9. Display department name and number of employees in the department.\par
+\par
+\highlight1 -SELECT DEPARTMENT_NAME, COUNT(*) FROM EMPLOYEES NATURAL JOIN DEPARTMENTS GROUP BY DEPARTMENT_NAME;\par
+\highlight0\par
+10. Display employee ID for employees who did more than one job in the past.\par
+\par
+\highlight1 -SELECT EMPLOYEE_ID FROM JOB_HISTORY GROUP BY EMPLOYEE_ID HAVING COUNT(*) > 1\par
+\highlight0\par
+\par
+\par
+}
+ 
