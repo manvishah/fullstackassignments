@@ -176,7 +176,7 @@ public class Assignmentone {
 			System.out.println("solve the mcqs");
 			System.out.println(" ");
 			
-			System.out.println("1)Arabs were defeated in 738 A.D. byâ€¦. ");
+			System.out.println("1)Arabs were defeated in 738 A.D. by…. ");
 			System.out.println("	1.pratiharas\r\n"
 					+ "	2.rashtrakutas\r\n"
 					+ "	3.palas\r\n"
@@ -214,7 +214,7 @@ public class Assignmentone {
 			}
 			
 			System.out.println(" ");
-			System.out.println("3) Mahatma Gandhi was first arrested during ' Satyagraha' in the year â€“");
+			System.out.println("3) Mahatma Gandhi was first arrested during ' Satyagraha' in the year –");
 			System.out.println("	1.1922\r\n"
 					+ "	2.1912\r\n"
 					+ "	3.1909\r\n"
@@ -249,13 +249,10 @@ public class Assignmentone {
 						break;
 					}
 			
-			
-			
-			
 		}while(i<=10);
 		
 		
-		if(count>70) {
+		if(count>=70) {
 			int res=count+10;
 			System.out.println("overall you scored "+count);
 			if(res >=90) {
