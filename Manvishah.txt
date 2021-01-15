@@ -1,3 +1,6 @@
 Manvi Shah
 (93282)
 manvi.shah@zensar.com
+
+
+java-assignment two and three was facing the problem while taking double datatype for salary so took int.
