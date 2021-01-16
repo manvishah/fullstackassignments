@@ -2,5 +2,6 @@ Manvi Shah
 (93282)
 manvi.shah@zensar.com
 
-
-java-assignment two and three was facing the problem while taking double datatype for salary so took int.
+1.my sql completed
+2.java-assignment two and three was facing the problem while taking double datatype for salary so took int .
+3.Java completed 4 assignments.
