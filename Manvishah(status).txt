@@ -2,6 +2,18 @@ Manvi Shah
 (93282)
 manvi.shah@zensar.com
 
-1.mysql 2 assignments completed
-2.java-assignment two and three was facing the problem while taking double datatype for salary although completed it by taking int datatype .
-3.Java completed 5 assignments.
+1.MySql:
+
+Assignment 1 --> Completed --> Date:11/01/2021
+Assignment 2 --> Completed --> Date:12/01/2021
+
+
+2.Java:
+
+Assignment 1 --> Completed --> Date:13/01/2021
+Assignment 2 --> Completed --> Date:13/01/2021 --> Took int datatype for salary.
+Assignment 3 --> Completed --> Date:13/01/2021 --> Took int datatype for salary.
+Assignment 4 --> Completed --> Date:15/01/2021
+Assignment 5 --> Completed --> Date:18/01/2021
+Assignment 6 --> Pending   --> Date:18/01/2021 --> Taking time to resolve error.
+Assignment 7 --> Completed --> Date:19/01/2021
