@@ -27,6 +27,9 @@ abstract class AccountIntialization
 			name = "Unknown";
 			amount = 500;
 			account[i] = new Account(accNo,name,amount);
+			System.out.println(" Your account no is  "+accNo
+					+" And default name is "+name
+					+" Amount deposited is "+amount);
 			accNo++;
 			i++;
 			acccnt++;

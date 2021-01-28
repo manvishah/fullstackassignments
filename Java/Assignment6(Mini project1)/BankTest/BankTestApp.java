@@ -16,29 +16,40 @@ public class BankTestApp
 		{
 			System.out.println();
 			System.out.println("1.Create Account");
-			System.out.println("  	a.Default Details");
-			System.out.println("  	b.Name and Amount to Deposit");
-			System.out.println("2.Check Account Balance");
-			System.out.println("3.Withdraw the Amount");
-			System.out.println("4.Deposit the Amount");
-			System.out.println("5.Transfer the Amount");
+			System.out.println("2.Check Balance");
+			System.out.println("3.Withdraw  Amount");
+			System.out.println("4.Deposit Amount");
+			System.out.println("5.Transfer Amount");
 			System.out.println("6.Exit");
 			System.out.println("Please enter the appropriate option");
 			System.out.println();
 
 			ch = sc.next();
 
-			switch(ch)
+			switch(ch) {
+			
+			
+			case "1":
 			{
-				case "a":
-							mybank.accountCreate();
-							break;
-				case "b":
-							System.out.println("Please Enter Your Name and Amount to Deposit(and Amount should be greater then 500");
-							name = sc.next();
-							amount = sc.nextFloat();
-							mybank.accountCreate(name,amount);
-							break;
+				System.out.println("  	a.Default Details");
+				System.out.println("  	b.Name and Amount to Deposit");
+				String m=sc.next();
+			switch(m) {
+
+			case "a":
+			{
+						mybank.accountCreate();
+						break;
+					
+			}
+			case "b":
+			{			System.out.println("Please Enter Your Name and Amount to Deposit");
+						name = sc.next();
+						amount = sc.nextFloat();
+						mybank.accountCreate(name,amount);
+						break;
+			}}
+			break;}
 				case "2":
 							System.out.println(" Enter Your Account Number");
 							accno = sc.nextInt();
@@ -68,7 +79,7 @@ public class BankTestApp
 							mybank.transfer(accno,taccno,amount);
 							break;
 				case "6":
-							System.out.println("Thank You For Chossing our Bank");
+							System.out.println("Thank You");
 							flag=false;
 							break;
 				default:
