@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <script>
+        function change()
+       {
+setInterval('document.getElementById("bulb").src="bulbon.jpg"',5000);
+       }
+function same()
+{
+    setInterval('document.getElementById("bulb").src="bulboff.jpg"',2000);
+}
+</script>
+    </head>
+    <body>
+       
+        <img id="bulb" src="bulboff.jpg" width=500  onmouseout="change()" onmouseover="same()" position="center" />
+
+    </body>
+</html>

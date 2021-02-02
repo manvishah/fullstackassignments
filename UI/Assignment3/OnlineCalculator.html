@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border:2px solid black;
+            position: absolute;
+            top:25%;
+            left: 40%;
+            height: 300px;
+            width: 350px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function add(){
+            var a=eval(document.getElementById("one").value);
+            var b=eval(document.getElementById("two").value);
+            var cal=a+b;
+            document.getElementById("res").value=cal;
+            // document.getElementById("one").reset(); 
+        }
+        function sub(){
+            var a=eval(document.getElementById("one").value);
+            var b=eval(document.getElementById("two").value);
+            var cal=a-b;
+            document.getElementById("res").value=cal;
+        }
+      
+    </script>
+</head>
+<body>
+    <div>
+        <h1>Online Calculator</h1>
+       <form action="" id="myForm">
+        <label for="">First number  </label>
+        <input type="text" id="one">
+        <br><br>
+        <label for="">Second number</label>
+        <input type="text" name="" id="two">
+        <br><br>
+        <label for="">Result</label>
+        <input type="text" name="" id="res">
+        <br><br>
+        <input type="button" value="Add" onclick="add()" >
+        <input type="button" value="Sub" onclick="sub()">
+       </form>
+    </div>
+</body>
+</html>
