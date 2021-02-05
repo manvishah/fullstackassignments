@@ -4,7 +4,7 @@ import java.util.Scanner;
 //Assignment three 13 jan 2021
 
  class EmployeeDetails{
-	 int[] array;String[] input;int[] sal;String[] desi;int n;
+	 int[] array;String[] input;int[] sal;String[] designation;int n;
 	 void read() {
 		 
 		 Scanner sc=new Scanner(System.in);
@@ -40,13 +40,13 @@ import java.util.Scanner;
 
 			//for name
 			length=n; 
-	      desi=new String[length];
+	      designation=new String[length];
 	        System.out.println("please enter the designation of employees");
 	        
-	    for(int i=0;i<desi.length;i++)
+	    for(int i=0;i<designation.length;i++)
 	    {
 	       
-	        desi[i]=sc.next();
+	        designation[i]=sc.next();
 	    }
 
 		 
@@ -72,19 +72,19 @@ import java.util.Scanner;
 		   System.out.println("Name of employees is:");
 		   System.out.println(Arrays.toString(input));
 		   System.out.println("Designation of employees is:");
-			 for(int i=0;i<desi.length;i++) {
-					System.out.println(desi[i]);
+			 for(int i=0;i<designation.length;i++) {
+					System.out.println(designation[i]);
 					}
 			 
 	 }
 	 void bonus() {
 		 
-		 for(int i=0;i<desi.length;i++) {
+		 for(int i=0;i<designation.length;i++) {
 				
 				int bonus;
-				if(desi[i].equals("manager")) {
+				if(designation[i].equals("manager")) {
 					System.out.println("Designation of employee is:");
-					System.out.println(desi[i]);
+					System.out.println(designation[i]);
 					System.out.println(input[i]+"  you got 15% bonus in salary");
 					bonus=15/100;
 					
@@ -94,9 +94,9 @@ import java.util.Scanner;
 							System.out.println("gross salary is "+(sal[j]));
 						}
 				}
-				else if(desi[i].equals("developer")) {
+				else if(designation[i].equals("developer")) {
 					 System.out.println("Designation of employee is:");
-					 System.out.println(desi[i]);
+					 System.out.println(designation[i]);
 					System.out.println(input[i]+"  you got 10% bonus in salary");
 					bonus=10/100;
 					for(int j=i;j==i;j++) {
@@ -107,7 +107,7 @@ import java.util.Scanner;
 				}
 				else {
 					 System.out.println("Designation of employees is:");
-					 System.out.println(desi[i]);
+					 System.out.println(designation[i]);
 					System.out.println(input[i]+"  you got 5% bonus in salary");
 					bonus=5/100;
 					for(int j=i;j==i;j++) {

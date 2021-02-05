@@ -16,38 +16,48 @@
         }
     </style>
     <script>
-        function add(){
-            var a=eval(document.getElementById("one").value);
-            var b=eval(document.getElementById("two").value);
-            var cal=a+b;
-            document.getElementById("res").value=cal;
-            // document.getElementById("one").reset(); 
-        }
-        function sub(){
-            var a=eval(document.getElementById("one").value);
-            var b=eval(document.getElementById("two").value);
-            var cal=a-b;
-            document.getElementById("res").value=cal;
-        }
-      
+       function add()  {
+                var firstNumber=document.getElementById("fn").value;
+                var secondNumber=document.getElementById("sn").value;
+                
+                document.getElementById("e1").innerHTML="";
+                var sum=eval(firstNumber)+eval(secondNumber);
+                document.getElementById("rs").value=sum;
+                return true;
+            }
+
+            function sub() {
+                var firstNumber=document.getElementById("fn").value;
+                var secondNumber=document.getElementById("sn").value;
+
+                document.getElementById("e2").innerHTML="";
+                var sub=eval(firstNumber)-eval(secondNumber);
+                document.getElementById("rs").value=sub;
+                return true;
+            }
+
+            function Clear() {
+                document.getElementById("fn").value="";
+                document.getElementById("sn").value="";
+            }
     </script>
 </head>
 <body>
     <div>
         <h1>Online Calculator</h1>
-       <form action="" id="myForm">
-        <label for="">First number  </label>
-        <input type="text" id="one">
-        <br><br>
-        <label for="">Second number</label>
-        <input type="text" name="" id="two">
-        <br><br>
-        <label for="">Result</label>
-        <input type="text" name="" id="res">
-        <br><br>
-        <input type="button" value="Add" onclick="add()" >
-        <input type="button" value="Sub" onclick="sub()">
-       </form>
+       <label for=""><b>First Number</b></label>
+      <input type="text" name="firstnum" id="fn" ><span id="e1"></span><br/><br/>
+
+    <label for=""><b>Second Number</b></label>
+    <input type="text" name="secondnum" id="sn"><span id="e2"></span><br><br/>
+
+    <label><b>Result</b></label>
+    <input type="text" name="result" id="rs"><br/><br/>
+
+    <input type="submit" value="Add" onclick="add()">
+    <input type="submit" value="Sub" onclick="sub()">
+
+    <input type="reset" value="clear"  onclick="Clear()">
     </div>
 </body>
 </html>
