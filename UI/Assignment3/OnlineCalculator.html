@@ -22,6 +22,8 @@
                 
                 document.getElementById("e1").innerHTML="";
                 var sum=eval(firstNumber)+eval(secondNumber);
+                 document.getElementById("fn").value="";
+                   document.getElementById("sn").value="";
                 document.getElementById("rs").value=sum;
                 return true;
             }
@@ -32,14 +34,13 @@
 
                 document.getElementById("e2").innerHTML="";
                 var sub=eval(firstNumber)-eval(secondNumber);
+                 document.getElementById("fn").value="";
+                 document.getElementById("sn").value="";
                 document.getElementById("rs").value=sub;
                 return true;
             }
 
-            function Clear() {
-                document.getElementById("fn").value="";
-                document.getElementById("sn").value="";
-            }
+           
     </script>
 </head>
 <body>
@@ -57,7 +58,7 @@
     <input type="submit" value="Add" onclick="add()">
     <input type="submit" value="Sub" onclick="sub()">
 
-    <input type="reset" value="clear"  onclick="Clear()">
+   
     </div>
 </body>
 </html>
