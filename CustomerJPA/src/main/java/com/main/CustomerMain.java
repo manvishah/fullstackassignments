@@ -19,8 +19,8 @@ public class CustomerMain {
 		System.out.println("\n 1.Create \n 2.Read \n 3. Update \n 4.Delete");
 		Scanner sc=new Scanner(System.in);
 		choice=sc.nextInt();
-		int id,phone;
-		String uname,pass,email,address;
+		int id;
+		String uname,pass,email,address,phone;
 		switch(choice)
 		{
 		case 1:
@@ -37,7 +37,7 @@ public class CustomerMain {
 			email=sc.next();
 			p1.setEmail(email);
 			System.out.println("Please enter your phoneno  ");
-			phone=sc.nextInt();
+			phone=sc.next();
 			p1.setPhoneno(phone);
 			System.out.println("Please enter your address ");
 			address=sc.next();
@@ -64,6 +64,7 @@ public class CustomerMain {
 			break;
 			
 		case 4:
+			System.out.println("Enter your id to delete ");
 			id=sc.nextInt();
 			cd.deleteProduct(id);
 			break;

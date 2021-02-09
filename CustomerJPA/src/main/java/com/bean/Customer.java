@@ -8,8 +8,8 @@ public class Customer {
 	
 @Id
 private int cid;
-private String username,password,email,address;
-private int phoneno;
+private String username,password,email,address,phoneno;
+
 public int getCid() {
 	return cid;
 }
@@ -40,10 +40,10 @@ public String getAddress() {
 public void setAddress(String address) {
 	this.address = address;
 }
-public int getPhoneno() {
+public String getPhoneno() {
 	return phoneno;
 }
-public void setPhoneno(int phoneno) {
+public void setPhoneno(String phoneno) {
 	this.phoneno = phoneno;
 }
 @Override
